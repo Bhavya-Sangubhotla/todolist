@@ -25,7 +25,7 @@ mongoose.set("strictQuery", false);
 main().catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect("mongodb://127.0.0.1:27017/todolistDB");
+    await mongoose.connect("mongodb+srv://Admin-Bhavya:Test%40123@cluster0.d7z9nxb.mongodb.net/todolistDB");
     console.log("successfully cvonnect3ed to mongo db");
 }
 
