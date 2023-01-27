@@ -1,0 +1,31 @@
+<%- include("partials/header") -%>
+<body>
+    <div class="background"></div>
+    <div class="list">
+        <h4>No of tasks left :</h4>
+        <h3 class="box" id="heading">
+            <%= kindOfDay %>
+        </h3>
+
+        <% items.forEach(function(i){ %>
+        <form action="/delete" method="post">
+            <div class="box">
+                <input type="checkbox" name="checkbox" value="<%= i._id %>" onchange="this.form.submit()">
+                <p>
+                    <%= i.name %>
+                </p>
+            </div>
+            <% }) %>
+            <input type="hidden" name="listName" value="<%= kindOfDay %>"></input>
+        </form>
+
+                <form action="/" method="post">
+                    <div class="item box">
+                        <input type="text" name="newitem" placeholder="new item" autocomplete="off" size="35">
+                        <button type="submit" name="listbutton" value="<%= kindOfDay %>">+</button>
+                    </div>
+                </form>
+    </div>
+</body>
+
+</html>
